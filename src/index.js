@@ -22,8 +22,7 @@ async function axiosFetch (axios, transfomer, input, init = {}) {
     url: input,
     method: init.method || 'GET',
     data: init.body instanceof FormData ? init.body : String(init.body),
-    headers: lowerCasedHeaders,
-    validateStatus: () => true
+    headers: lowerCasedHeaders
   }, input, init);
 
   const result = await axios.request(config);
